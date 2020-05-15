@@ -343,7 +343,7 @@ class CNC_controller:
             cnc_text_bin = pickle.loads(f.read())
 
         print(' - Sending file: {}'.format(filename))
-        if type() == dict:
+        if type(cnc_text_bin) == dict:
             self.send_vector(cnc_text_bin['cnc_generation'][0], cnc_text_bin['cnc_generation'][1], p_offset=p_offset)
         else:
             self.send_vector(cnc_text_bin[0], cnc_text_bin[1], p_offset=p_offset)
